@@ -1,45 +1,48 @@
 .info-section {
   width: 100%;
   padding: 100px 0;
-  /* background: #050505; Optional slightly darker bg to separate/highlight */
 }
+
+/* ===== Main Container ===== */
 
 .info-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 165px;
+  padding: 0 130px;
+
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
+  align-items: flex-start;
+  gap: 24px;
 }
 
+/* ===== Visual Side ===== */
+
 .info-visual {
-  flex: 1;
+  width: 678px;
+  height: 678px;
   position: relative;
-  height: 600px;
-  /* Constrained height for the orbit visual */
+  flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Orbit background */
+
 .orbit-bg {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
+  width: 678px;
+  height: 678px;
+  object-fit: contain;
   animation: spin 60s linear infinite;
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
+
+/* Center logo */
 
 .central-logo {
   position: absolute;
@@ -50,78 +53,114 @@
   z-index: 10;
 }
 
+/* ===== Floating Elements (Pixel Accurate) ===== */
+
 .float {
   position: absolute;
-  /* Resetting fixed positions to percentage based or simpler arrangement */
 }
 
-/* Positioning floats relative to the container center */
+/* Ellipses */
+
 .e11 {
-  top: 20%;
-  left: 20%;
-  width: 50px;
+  width: 66px;
+  height: 66px;
+  top: 208px;
+  left: 149px;
 }
 
 .e09 {
-  bottom: 20%;
-  right: 20%;
-  width: 60px;
+  width: 66px;
+  height: 66px;
+  top: 233px;
+  left: 481px;
 }
 
 .e10 {
-  bottom: 10%;
-  left: 40%;
-  width: 40px;
+  width: 66px;
+  height: 66px;
+  top: 486px;
+  left: 241px;
 }
 
+/* Small icons */
+
 .g124 {
-  top: 15%;
-  right: 30%;
-  width: 30px;
+  width: 32px;
+  height: 32px;
+  top: 142px;
+  left: 382px;
 }
 
 .g125 {
-  top: 50%;
-  left: 10%;
-  width: 30px;
+  width: 32px;
+  height: 32px;
+  top: 473px;
+  left: 437px;
 }
 
 .g126 {
-  bottom: 40%;
-  right: 10%;
-  width: 30px;
+  width: 32px;
+  height: 32px;
+  top: 372px;
+  left: 141px;
 }
 
+/* ===== Text Side ===== */
+
 .info-text {
-  flex: 1;
-  max-width: 500px;
+  width: 443px;
+  margin-top: 161px;
 }
 
 .info-title {
-  font-size: 48px;
+  width: 443px;
+
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 64px;
+
+  color: #ffffff;
+  margin-bottom: 12px;
 }
 
 .info-subtitle {
+  width: 385px;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   font-size: 18px;
+  line-height: 28px;
+
   color: #9e9e9e;
-  line-height: 1.6;
-  margin-bottom: 40px;
+  margin-bottom: 46px;
 }
 
+/* Button */
+
 .info-btn {
-  background: none;
+  width: 127px;
+  height: 44px;
+
+  background: transparent;
   border: none;
-  cursor: pointer;
   padding: 0;
-  transition: transform 0.2s;
+
+  cursor: pointer;
+  display: inline-block;
+}
+
+.info-btn img {
+  display: block;
+  width: 127px;
+  height: 44px;
 }
 
 .info-btn:hover {
   transform: scale(1.05);
 }
+
+/* ===== Responsive ===== */
 
 @media (max-width: 1280px) {
   .info-container {
@@ -132,21 +171,28 @@
 @media (max-width: 1024px) {
   .info-container {
     flex-direction: column-reverse;
-    /* Text on top for mobile? Or Image top? */
     text-align: center;
+    gap: 40px;
   }
 
   .info-text {
-    max-width: 100%;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .info-title,
+  .info-subtitle {
+    width: 100%;
   }
 
   .info-visual {
     width: 100%;
-    height: 400px;
+    height: auto;
   }
 
   .orbit-bg {
-    max-width: 400px;
+    max-width: 420px;
+    height: auto;
   }
 }
 
@@ -157,5 +203,6 @@
 
   .info-title {
     font-size: 32px;
+    line-height: 44px;
   }
 }

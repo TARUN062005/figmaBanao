@@ -1,8 +1,8 @@
 import React from 'react';
 import "./InfoSection.css";
 import frame9 from "../../assets/Frame 9.png";
-import group123 from "../../assets/Group 123.png"; 
-import Vector from "../../assets/Vector.png";     
+import group123 from "../../assets/Group 123.png";
+import Vector from "../../assets/Vector.png";
 import group124 from "../../assets/Group 124.png";
 import group125 from "../../assets/Group 125.png";
 import group126 from "../../assets/Group 126.png";
@@ -18,7 +18,7 @@ const InfoSection = () => {
         <div className="info-visual">
           <img src={group123} alt="" className="orbit-bg" />
           <img src={Vector} alt="" className="central-logo" />
-          
+
           {/* Floating Items */}
           <img src={ellipse11} alt="" className="float e11" />
           <img src={ellipse9} alt="" className="float e09" />
@@ -31,12 +31,19 @@ const InfoSection = () => {
         {/* Text Side */}
         <div className="info-text">
           <h2 className="info-title">
-            We're here to guide and <br /> help you at all times
+            We're here to guide and to <br />
+            help you at all <br />
+            times
           </h2>
+
+
           <p className="info-subtitle">
-            A good design is not only aesthetically pleasing, but also <br />
-            functional. It should be able to solve the problem
+            A good design is not only aesthetically <br />
+            pleasing, but also functional. It should <br />
+            be able to solve the problem
           </p>
+
+
           <button className="info-btn">
             <img src={frame9} alt="Download" />
           </button>

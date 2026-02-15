@@ -93,32 +93,47 @@
 .wireframe-container {
     flex: 1;
     position: relative;
+    /* Sphere dimensions */
+    width: 542px;
+    height: 542px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .wireframe-sphere {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    opacity: 0.8;
-}
-
-.blur-ellipse-top,
-.blur-ellipse-bottom {
-    position: absolute;
-    filter: blur(60px);
-    z-index: 0;
+    width: 542px;
+    height: 542px;
+    opacity: 1;
+    z-index: 1;
 }
 
 .blur-ellipse-top {
-    top: -10%;
-    left: 0;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    /* top: 3933px global vs sphere 3961px -> -28px local */
+    top: -28px;
+    /* left: 108px global vs sphere 130px -> -22px local */
+    left: -22px;
+    background: radial-gradient(1202.04% 1056.38% at 42.92% -7.08%, #494955 0%, #141414 100%);
+    backdrop-filter: blur(20px);
+    z-index: 2;
+    border-radius: 50%;
 }
 
 .blur-ellipse-bottom {
-    bottom: -10%;
-    right: 0;
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    /* top: 4465px global vs sphere 3961px -> 504px local */
+    top: 504px;
+    /* left: 594px global vs sphere 130px -> 464px local */
+    left: 464px;
+    background: radial-gradient(1202.04% 1056.38% at 42.92% -7.08%, #494955 0%, #141414 100%);
+    backdrop-filter: blur(20px);
+    z-index: 2;
+    border-radius: 50%;
 }
 
 /* Contact Form */
@@ -183,16 +198,14 @@
 }
 
 .submit-btn {
-    background: linear-gradient(90deg, #ff9898, #8054ff);
-    border: none;
-    border-radius: 8px;
-    padding: 16px;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: transparent;   /* remove any background */
+  border: none;              /* remove button border */
+  padding: 0;                /* remove extra spacing */
+  margin: 0;
+  cursor: pointer;
+  display: inline-block;     /* shrink to image size */
 }
+
 
 .submit-btn:hover {
     opacity: 0.9;

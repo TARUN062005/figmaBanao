@@ -58,7 +58,7 @@ const Contact = () => {
 
             <div className="input-box message-input">
               <img src={fr6} alt="Message" />
-              <textarea placeholder="Message" className="hidden-textarea"></textarea>
+              <textarea placeholder="Name" className="hidden-textarea"></textarea>
             </div>
 
             <button className="submit-btn" type="submit">

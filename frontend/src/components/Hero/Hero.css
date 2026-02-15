@@ -364,45 +364,78 @@
   z-index: 0;
 }
 
-/* Glow */
+/* ================================================= */
+/* ================= GLOW / DECORATIONS ============= */
+/* ================================================= */
 
 .e5,
 .e13,
 .e3,
 .e14 {
   position: absolute;
-  filter: blur(80px);
-  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
 }
+
+/* ===== MAIN LARGE GLOW ===== */
 
 .e5 {
-  top: 0;
-  left: 20%;
-  width: 400px;
-  height: 400px;
-  background: #8054ff;
+  width: 538px;
+  height: 538px;
+  top: -30px;
+  left: 451px;
+
+  background: radial-gradient(circle at center,
+      rgba(34, 34, 40, 0.9) 0%,
+      rgba(34, 34, 40, 0.4) 40%,
+      rgba(34, 34, 40, 0) 75%);
+
+  filter: blur(80px);
+  opacity: 0.5;
 }
 
+/* ===== SMALL GLOWS (20px blur) ===== */
+
 .e13 {
-  top: 20%;
-  right: 20%;
-  width: 300px;
-  height: 300px;
-  background: #ff9898;
+  width: 64px;
+  height: 64px;
+  top: 70px;
+  left: 656px;
+
+  background: radial-gradient(circle,
+      #494955 0%,
+      #141414 70%);
+
+  filter: blur(20px);
+ 
 }
 
 .e3 {
-  bottom: 10%;
-  left: 30%;
-  width: 350px;
-  height: 350px;
-  background: #54d1ff;
+  width: 96px;
+  height: 96px;
+  top: 303px;
+  left: 1223px;
+
+  background: radial-gradient(circle,
+      #494955 0%,
+      #141414 70%);
+
+  filter: blur(20px);
+ 
 }
 
+/* ===== MEDI1UM GLOW (30px blur) ===== */
+
 .e14 {
-  bottom: 0;
-  right: 10%;
-  width: 350px;
-  height: 350px;
-  background: #ffd454;
+  width: 130px;
+  height: 130px;
+  top: 400px;
+  left: 122px;
+
+  background: radial-gradient(circle,
+      #494955 0%,
+      #141414 70%);
+
+  filter: blur(30px);
+
 }

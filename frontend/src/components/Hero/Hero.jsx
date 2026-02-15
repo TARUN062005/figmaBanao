@@ -43,10 +43,10 @@ const Hero = () => {
 
       {/* Background */}
       <img src={subtract} alt="" className="bg subtract" />
-      <img src={ellipse5} alt="" className="bg e5" />
-      <img src={ellipse13} alt="" className="bg e13" />
-      <img src={ellipse3} alt="" className="bg e3" />
-      <img src={ellipse14} alt="" className="bg e14" />
+      <div className="bg e5" />
+      <div className="bg e13" />
+      <div className="bg e3" />
+      <div className="bg e14" />
 
       <div className="container">
 

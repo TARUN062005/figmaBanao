@@ -74,7 +74,7 @@ const Hero = () => {
 
         <div className="dashboard">
 
-          <img src={group258} alt="" className="dashboard-main-bg" />
+          <div className="dashboard-main-bg" />
 
           <div className="dashboard-grid">
 

@@ -72,10 +72,12 @@
 }
 
 .dashboard-main-bg {
-  width: 980px;
-  /* reduced to fit panels */
+  width: 910px;
+  height: 564px;
+  /* Grid (504) + Padding (60) */
   border-radius: 28px;
   display: block;
+  background-color: rgba(24, 24, 28, 1);
 }
 
 /* ================= GRID ================= */
@@ -87,7 +89,7 @@
 
   display: grid;
 
-  grid-template-columns: 260px 260px 260px;
+  grid-template-columns: 240px 240px 240px;
   grid-template-rows: 240px 240px;
 
   gap: 24px;
@@ -336,8 +338,8 @@
   /* If rectangle needs to match panel (240x103), I should change width to 240px? */
   /* But 230px fits inside 240px neatly. I'll stick to Figma 230px for content. */
 
-  top: 75%;
-  left: 46%;
+  top: 73%;
+  left: 49%;
   transform: translate(-50%, -50%);
 
   border-radius: 20px;

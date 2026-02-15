@@ -110,32 +110,48 @@
     z-index: 1;
 }
 
-.blur-ellipse-top {
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    /* top: 3933px global vs sphere 3961px -> -28px local */
-    top: -28px;
-    /* left: 108px global vs sphere 130px -> -22px local */
-    left: -22px;
-    background: radial-gradient(1202.04% 1056.38% at 42.92% -7.08%, #494955 0%, #141414 100%);
-    backdrop-filter: blur(20px);
-    z-index: 2;
-    border-radius: 50%;
-}
+/* ================================================= */
+/* ================= GLOW ELLIPSES ================== */
+/* ================================================= */
 
+.blur-ellipse-top,
 .blur-ellipse-bottom {
     position: absolute;
+    border-radius: 50%;
+    z-index: 2;
+
+    /* Sharp core gradient */
+    background: radial-gradient(circle at center,
+            #494955 0%,
+            #2b2b32 40%,
+            #141414 75%);
+}
+
+/* ===== TOP SMALL ===== */
+
+.blur-ellipse-top {
+    width: 64px;
+    height: 64px;
+    top: -28px;
+    left: -22px;
+
+    /* 🔥 Soft glow WITHOUT destroying sharpness */
+    box-shadow:
+        0 0 20px rgba(73, 73, 85, 0.8),
+        0 0 40px rgba(73, 73, 85, 0.5);
+}
+
+/* ===== BOTTOM MEDIUM ===== */
+
+.blur-ellipse-bottom {
     width: 96px;
     height: 96px;
-    /* top: 4465px global vs sphere 3961px -> 504px local */
     top: 504px;
-    /* left: 594px global vs sphere 130px -> 464px local */
     left: 464px;
-    background: radial-gradient(1202.04% 1056.38% at 42.92% -7.08%, #494955 0%, #141414 100%);
-    backdrop-filter: blur(20px);
-    z-index: 2;
-    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px rgba(73, 73, 85, 0.8),
+        0 0 50px rgba(73, 73, 85, 0.5);
 }
 
 /* Contact Form */

@@ -33,8 +33,8 @@ const Contact = () => {
         {/* Background Visuals */}
         <div className="wireframe-container">
           <img src={group133} alt="" className="wireframe-sphere" />
-          <img src={ellipse16} alt="" className="blur-ellipse-top" />
-          <img src={ellipse15} alt="" className="blur-ellipse-bottom" />
+          <div className="blur-ellipse-top" />
+          <div className="blur-ellipse-bottom" />
         </div>
 
         {/* Form Content */}

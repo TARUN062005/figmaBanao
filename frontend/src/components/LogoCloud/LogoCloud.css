@@ -1,8 +1,7 @@
 .logocloud-section {
   width: 100%;
   padding: 100px 0;
-  background-color: #18181c;
-  /* rect49-bg color */
+  /* rect49-bg color removed, handled by container image */
   position: relative;
 }
 

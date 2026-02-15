@@ -1,11 +1,12 @@
 .contact-wrapper {
     background-color: #000000;
     width: 100%;
-    padding: 100px 0;
+    padding: 0 0 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    z-index: 10;
 }
 
 /* Banner Container */
@@ -13,12 +14,11 @@
     position: relative;
     width: 100%;
     max-width: 1110px;
-    /* Constrained width */
-    margin: 0 auto 120px;
+    margin: -212px auto 120px;
+    /* Pull up by half height (~212px) */
     padding: 0 20px;
-    /* Padding for mobile safety */
     box-sizing: content-box;
-    /* To respect max-width as content */
+    z-index: 20;
 }
 
 /* Inner Container for Banner */
@@ -198,12 +198,16 @@
 }
 
 .submit-btn {
-  background: transparent;   /* remove any background */
-  border: none;              /* remove button border */
-  padding: 0;                /* remove extra spacing */
-  margin: 0;
-  cursor: pointer;
-  display: inline-block;     /* shrink to image size */
+    background: transparent;
+    /* remove any background */
+    border: none;
+    /* remove button border */
+    padding: 0;
+    /* remove extra spacing */
+    margin: 0;
+    cursor: pointer;
+    display: inline-block;
+    /* shrink to image size */
 }
 
 

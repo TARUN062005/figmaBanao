@@ -7,11 +7,23 @@ import frame3 from "../../assets/Group 97.png";
 import frame4 from "../../assets/Group 98.png";
 import frame5 from "../../assets/Group 99.png";
 import frame6 from "../../assets/Group 100.png";
-
+import rect49 from "../../assets/Rectangle 49.png"
 const LogoCloud = () => {
   return (
     <section className="logocloud-section">
-      <div className="logocloud-container">
+      <div
+        className="logocloud-container"
+        style={{
+          backgroundImage: `url(${rect49})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '725px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center'
+        }}
+      >
         {/* Main Heading */}
         <h2 className="logocloud-title">
           Companies we Worked <br /> With in Since 2015

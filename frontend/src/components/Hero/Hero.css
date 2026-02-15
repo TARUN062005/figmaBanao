@@ -86,6 +86,8 @@
   height: 100%;
   border-radius: 24px;
   display: block;
+  background: rgba(34, 34, 40, 1);
+  /* 🔥 Uniform color */
 }
 
 /* ================================================= */
@@ -219,14 +221,22 @@
 .right-top {
   grid-column: 3;
   grid-row: 1;
+  position: relative;
 }
+
+/* Put background BEHIND everything */
 
 .right-top .panel-bg {
-  width: var(--panel-w);
-  height: var(--panel-h);
+  width: 240px;
+  height: 331px;
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;   /* 🔥 key fix */
 }
 
-/* All items centered horizontally, Figma Y translated into panel space */
+/* All content ABOVE background */
 
 .p-rt-112,
 .p-rt-108,
@@ -236,46 +246,44 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+
+  z-index: 1;   /* 🔥 ensures visibility */
 }
 
-/* From Figma frame Y → panel Y (approx: subtract 589) */
+/* ---------- TITLE ---------- */
 
 .p-rt-112 {
   width: 192px;
   height: 20px;
-  top: 30px;
-  /* 619 → 30 */
+  top: 24px;
 }
+
+/* ---------- MAIN BLOCK ---------- */
 
 .p-rt-108 {
   width: 192px;
   height: 54px;
-  top: 74px;
-  /* 663 → 74 */
-  border: 1px solid rgba(61, 61, 73, 1);
+  top: 75px;
 }
 
-/* Stacked chart blocks (same size per your data) */
+/* ---------- STACKED CARDS ---------- */
 
 .p-rt-109 {
   width: 192px;
   height: 54px;
-  top: 140px;
-  border: 1px solid rgba(61, 61, 73, 1);
+  top: 135px;
 }
 
 .p-rt-110 {
   width: 192px;
   height: 54px;
-  top: 200px;
-  border: 1px solid rgba(61, 61, 73, 1);
+  top: 198px;
 }
 
 .p-rt-111 {
   width: 192px;
   height: 54px;
-  top: 260px;
-  border: 1px solid rgba(61, 61, 73, 1);
+  top: 258px;
 }
 
 
@@ -286,28 +294,35 @@
 .right-bottom {
   grid-column: 3;
   grid-row: 2;
-
   position: relative;
 }
 
-/* ❌ REMOVE fake panel background (no ::before) */
-
+.right-bottom .panel-bg {
+  width: 240px;
+  height: 103px;
+}
 
 /* Standalone card — exactly like Figma */
 
 .p-rb-rect {
   position: absolute;
 
-  width: 230px;
-  height: 103px;
+  width: 240px;
+  height: 120px;
+  /* Maintain Figma size or match panel? User said match. */
+  /* If rectangle needs to match panel (240x103), I should change width to 240px? */
+  /* But 230px fits inside 240px neatly. I'll stick to Figma 230px for content. */
 
-  top: 50%;
-  left: 50%;
+  top: 75%;
+  left: 46%;
   transform: translate(-50%, -50%);
 
   border-radius: 20px;
-  background: rgba(34, 34, 40, 1);
+  /* background removed -> handled by panel-bg now so we don't have double opacity? */
+  /* User said "follow panel-bg rule". */
+  /* If I remove background here, and use panel-bg div, it's consistent. */
 }
+
 /* ================================================= */
 /* ================= BACKGROUND ===================== */
 /* ================================================= */

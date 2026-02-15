@@ -2,6 +2,7 @@ import React from "react";
 import "./Hero.css";
 
 /* Background decorations */
+import frame2 from "../../assets/Frame 2.png";
 import subtract from "../../assets/Subtract.png";
 import ellipse5 from "../../assets/Ellipse 5.png";
 import ellipse13 from "../../assets/Ellipse 13.png";
@@ -69,7 +70,7 @@ const Hero = () => {
 
             {/* LEFT TALL PANEL */}
             <div className="panel left">
-              <img src={group241} alt="" className="panel-bg" />
+              <div className="panel-bg" />
 
               <img src={vector} className="p-vector" alt="" />
               <img src={line15} className="p-line15" alt="" />
@@ -84,13 +85,13 @@ const Hero = () => {
 
             {/* MIDDLE TOP */}
             <div className="panel middle-top">
-              <img src={group241} alt="" className="panel-bg" />
+              <div className="panel-bg" />
               <img src={group115} className="p-mt-115" alt="" />
             </div>
 
             {/* MIDDLE BOTTOM */}
             <div className="panel middle-bottom">
-              <img src={group241} alt="" className="panel-bg" />
+              <div className="panel-bg" />
               <img src={group113} className="p-mb-113" alt="" />
               <img src={line16} className="p-mb-line" alt="" />
               <img src={group132} className="p-mb-132" alt="" />
@@ -98,7 +99,7 @@ const Hero = () => {
 
             {/* RIGHT TOP */}
             <div className="panel right-top">
-              <img src={group241} alt="" className="panel-bg" />
+              <div className="panel-bg" />
 
               <img src={group112} className="p-rt-112" alt="" />
               <img src={group108} className="p-rt-108" alt="" />
@@ -109,6 +110,7 @@ const Hero = () => {
 
             {/* RIGHT BOTTOM */}
             <div className="panel right-bottom">
+              <div className="panel-bg" />
               <img src={rect2} className="p-rb-rect" alt="" />
             </div>
 

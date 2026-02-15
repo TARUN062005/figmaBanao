@@ -55,10 +55,20 @@ const Hero = () => {
         </h1>
 
         <p className="hero-subtitle">
-          A good design is not only aesthetically pleasing, but also functional.
+          A good design is not only aesthetically pleasing, but also <br />
+          functional. It should be able to solve the problem
         </p>
 
-        <button className="btn-primary">Download Template</button>
+        <button
+          className="btn-primary"
+          style={{
+            backgroundImage: `url(${frame2})`,
+            backgroundSize: '100% 100%',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: 'transparent'
+          }}
+        >
+        </button>
 
         {/* ===== DASHBOARD ===== */}
 

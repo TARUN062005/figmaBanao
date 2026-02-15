@@ -1,6 +1,7 @@
 .logocloud-section {
   width: 100%;
-  padding: 100px 0;
+  padding: 60px 0 100px;
+  /* Reduced top, kept bottom for overlap */
   /* rect49-bg color removed, handled by container image */
   position: relative;
 }

@@ -82,7 +82,7 @@
 .footer-nav .nav-column:nth-child(n+2)::before {
   content: "";
   display: block;
-  height: 44px;      /* heading height */
+  height: 46px;      /* heading height */
   margin-bottom: 12px; /* same spacing as real heading */
 }
 

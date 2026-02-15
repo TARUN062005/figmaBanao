@@ -31,9 +31,7 @@ const InfoSection = () => {
         {/* Text Side */}
         <div className="info-text">
           <h2 className="info-title">
-            We're here to guide and to <br />
-            help you at all <br />
-            times
+            We're here to guide and help you at all times
           </h2>
 
 

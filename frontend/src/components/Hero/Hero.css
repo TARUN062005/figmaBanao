@@ -1,12 +1,14 @@
-/* Hero Section */
+/* ===== HERO SECTION ===== */
+
 .hero {
   position: relative;
   width: 100%;
   padding-top: 160px;
-  /* Header space + spacing */
-  padding-bottom: 100px;
-  overflow: hidden;
+  padding-bottom: 0;        /* IMPORTANT — no fake space */
+  overflow: visible;
 }
+
+/* Container */
 
 .hero .container {
   max-width: 1440px;
@@ -23,27 +25,29 @@
   align-items: center;
 }
 
-/* Typography */
+/* ===== TEXT ===== */
+
 .hero-title {
   font-size: 64px;
   font-weight: 600;
   line-height: 1.25;
-  margin: 0 0 24px 0;
+  margin-bottom: 24px;
+
   background: linear-gradient(to right, #fff, #bbaaff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .hero-subtitle {
   max-width: 680px;
-  margin: 0 auto 48px;
+  margin-bottom: 48px;
   color: #9e9e9e;
   font-size: 18px;
   line-height: 1.6;
 }
 
-/* Dashboard Panel */
+/* ===== DASHBOARD ===== */
+
 .dashboard-panel {
   display: flex;
   justify-content: center;
@@ -51,11 +55,15 @@
   gap: 32px;
   padding: 48px;
   border-radius: 32px;
+
   background: rgba(17, 17, 24, 0.8);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+
   margin-top: 60px;
-  width: 100%;
+
+  position: relative;
+  z-index: 10;
 }
 
 .col {
@@ -66,25 +74,32 @@
 
 .col img {
   width: 100%;
-  height: auto;
   border-radius: 12px;
 }
 
-/* Decorative Backgrounds - Kept Absolute but constrained */
+/* ===== SUBTRACT BACKGROUND ===== */
+
 .bg {
   position: absolute;
   pointer-events: none;
   z-index: 1;
 }
 
+/* 🔥 KEY — bottom aligned */
+
 .subtract {
-  top: 100px;
+  width: 1446px;
+  height: 474.4px;
+
+  position: absolute;
+  bottom: -200px;        /* pushes graphic BELOW hero */
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  max-width: 1440px;
-  opacity: 0.5;
+
+  z-index: 1;
 }
+
+/* ===== GLOW BLOBS ===== */
 
 .e5,
 .e13,
@@ -112,6 +127,8 @@
   background: #ff9898;
 }
 
+/* ===== RESPONSIVE ===== */
+
 @media (max-width: 1280px) {
   .hero .container {
     padding: 0 80px;
@@ -130,6 +147,11 @@
   .dashboard-panel {
     flex-direction: column;
     padding: 24px;
-    gap: 16px;
+  }
+
+  .subtract {
+    width: 100%;
+    height: auto;
+    bottom: -120px;
   }
 }

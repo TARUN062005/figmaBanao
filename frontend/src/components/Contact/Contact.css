@@ -1,7 +1,8 @@
 .contact-wrapper {
     background-color: #000000;
     width: 100%;
-    padding: 0 0 100px 0;
+    padding: 0 0 60px 0;
+    /* Reduced bottom spacing */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,18 +10,20 @@
     z-index: 10;
 }
 
-/* ===== Banner ===== */
-
+/* Banner Container */
 .banner-container {
     position: relative;
     width: 100%;
     max-width: 1110px;
-    margin: -360px auto 120px;
+    margin: -360px auto 80px;
+    /* Reduced bottom margin */
+    /* Pull up by half height (~212px) */
     padding: 0 20px;
     box-sizing: content-box;
     z-index: 20;
 }
 
+/* Inner Container for Banner */
 .banner-inner {
     position: relative;
     width: 100%;
@@ -39,6 +42,7 @@
     top: 0;
     right: 0;
     height: 100%;
+    width: auto;
     opacity: 0.6;
     pointer-events: none;
     object-fit: cover;
@@ -68,14 +72,14 @@
     border-radius: 8px;
     padding: 12px 32px;
     cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .banner-btn:hover {
     transform: scale(1.05);
 }
 
-/* ===== Get In Touch Section ===== */
-
+/* Get In Touch Section */
 .get-in-touch-section {
     display: flex;
     justify-content: space-between;
@@ -84,14 +88,14 @@
     max-width: 1110px;
     margin: 0 auto;
     gap: 60px;
+    position: relative;
     padding: 0 20px;
 }
-
-/* Sphere container */
 
 .wireframe-container {
     flex: 1;
     position: relative;
+    /* Sphere dimensions */
     width: 542px;
     height: 542px;
     display: flex;
@@ -102,51 +106,42 @@
 .wireframe-sphere {
     width: 542px;
     height: 542px;
+    opacity: 1;
     z-index: 1;
 }
 
-/* ===== TRUE BACKDROP BLUR ELLIPSES ===== */
-
-.blur-ellipse-top,
-.blur-ellipse-bottom {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-
-    background: radial-gradient(
-        1202.04% 1056.38% at 42.92% -7.08%,
-        rgba(73, 73, 85, 0.7) 0%,
-        rgba(20, 20, 20, 0.4) 100%
-    );
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    z-index: 2;
-}
-
-/* Top ellipse */
-
 .blur-ellipse-top {
+    position: absolute;
     width: 64px;
     height: 64px;
+    /* top: 3933px global vs sphere 3961px -> -28px local */
     top: -28px;
+    /* left: 108px global vs sphere 130px -> -22px local */
     left: -22px;
+    background: radial-gradient(1202.04% 1056.38% at 42.92% -7.08%, #494955 0%, #141414 100%);
+    backdrop-filter: blur(20px);
+    z-index: 2;
+    border-radius: 50%;
 }
-
-/* Bottom ellipse */
 
 .blur-ellipse-bottom {
+    position: absolute;
     width: 96px;
     height: 96px;
+    /* top: 4465px global vs sphere 3961px -> 504px local */
     top: 504px;
+    /* left: 594px global vs sphere 130px -> 464px local */
     left: 464px;
+    background: radial-gradient(1202.04% 1056.38% at 42.92% -7.08%, #494955 0%, #141414 100%);
+    backdrop-filter: blur(20px);
+    z-index: 2;
+    border-radius: 50%;
 }
 
-/* ===== Contact Form ===== */
-
+/* Contact Form */
 .contact-form-container {
     flex: 1;
+    width: 100%;
     max-width: 500px;
     z-index: 2;
 }
@@ -184,6 +179,7 @@
 
 .input-box img {
     width: 24px;
+    height: 24px;
     opacity: 0.5;
 }
 
@@ -193,6 +189,7 @@
     border: none;
     color: white;
     width: 100%;
+    font-family: inherit;
     font-size: 16px;
     outline: none;
 }
@@ -202,28 +199,25 @@
     min-height: 100px;
 }
 
-/* Image button only */
-
 .submit-btn {
     background: transparent;
+    /* remove any background */
     border: none;
+    /* remove button border */
     padding: 0;
+    /* remove extra spacing */
+    margin: 0;
     cursor: pointer;
     display: inline-block;
+    /* shrink to image size */
 }
 
-.submit-btn img {
-    display: block;
-}
 
 .submit-btn:hover {
     opacity: 0.9;
 }
 
-/* ===== Responsive ===== */
-
 @media (max-width: 1024px) {
-
     .banner-inner {
         flex-direction: column;
         text-align: center;

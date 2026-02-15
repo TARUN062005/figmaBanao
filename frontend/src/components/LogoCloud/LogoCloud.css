@@ -14,17 +14,28 @@
 
 .logocloud-title {
   color: #FFFFFF;
-  font-size: 48px;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 60px;
+  font-size: 48px;
+  line-height: 64px;
+  /* Exact line height */
+  text-align: center;
+  /* Layout Dimensions */
+  width: 567px;
+  /* height: 128px; Let content define height or min-height */
+  margin: 0 auto 70px;
+  /* Center horizontally, 70px bottom margin to grid */
+  /* Top spacing: Container starts 2945. Title at 3057. Diff 112px. */
+  /* We can add padding-top to container or margin-top to title. Container uses flex center, so maybe just standard flow */
 }
 
 .logo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
-  justify-items: center;
+  /* Adjust spacing as needed, user didn't specify gap pixels, kept 30 */
+  width: 100%;
 }
 
 .logo-box {

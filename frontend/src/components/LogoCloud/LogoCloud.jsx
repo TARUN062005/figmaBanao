@@ -21,7 +21,9 @@ const LogoCloud = () => {
           minHeight: '725px',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center'
+          justifyContent: 'flex-start',
+          paddingTop: '112px',
+          boxSizing: 'border-box'
         }}
       >
         {/* Main Heading */}

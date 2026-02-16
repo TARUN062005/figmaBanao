@@ -81,3 +81,16 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ===================================== */
+/* 📱 MOBILE ONLY */
+/* ===================================== */
+
+@media (max-width: 768px) {
+
+  .logocloud-section {
+    padding: 60px 0 120px;
+    /* normal spacing */
+  }
+
+}

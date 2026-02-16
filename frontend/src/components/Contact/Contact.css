@@ -263,3 +263,49 @@
         font-size: 32px;
     }
 }
+
+/* ===================================== */
+/* 📱 MOBILE / SMALL VIEW ONLY */
+/* DOES NOT AFFECT DESKTOP */
+/* ===================================== */
+
+@media (max-width: 768px) {
+
+    /* 🔹 Stop wrapper pull-up */
+
+    .contact-wrapper {
+        margin-top: 0;
+        padding: 80px 0 60px 0;
+    }
+
+    /* 🔹 Banner becomes normal centered block */
+
+    .banner-container {
+        position: relative;
+        /* disable floating */
+        top: 0;
+        left: auto;
+        transform: none;
+        margin: 0 auto 60px;
+        /* space below LogoCloud */
+        max-width: 520px;
+        /* square feel */
+    }
+
+    /* 🔹 Banner layout becomes compact */
+
+    .banner-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 32px;
+        min-height: auto;
+        border-radius: 28px;
+    }
+
+    /* 🔹 Contact section stacks below */
+
+    .get-in-touch-section {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+}

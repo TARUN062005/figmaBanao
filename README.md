@@ -186,4 +186,4 @@ The project is deployed on **Vercel** for optimal performance and continuous int
 
 ## 👤 Author
 
-[Your Name]
+VEMURI PRINCE TARUN

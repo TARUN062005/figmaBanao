@@ -41,8 +41,10 @@
 .footer-logo {
   width: 56px;
   height: auto;
-  margin-bottom: 23px;  /* space between logo and text */
-  margin-top: 31px;     /* pushes logo DOWN */
+  margin-bottom: 23px;
+  /* space between logo and text */
+  margin-top: 31px;
+  /* pushes logo DOWN */
 }
 
 
@@ -56,7 +58,8 @@
 
 .footer-nav {
   display: flex;
-  gap: 104px; /* spacing between columns */
+  gap: 104px;
+  /* spacing between columns */
 }
 
 /* Each column */
@@ -82,8 +85,8 @@
 .footer-nav .nav-column:nth-child(n+2)::before {
   content: "";
   display: block;
-  height: 46px;      /* heading height */
-  margin-bottom: 12px; /* same spacing as real heading */
+  height: 46px;
+  margin-bottom: 12px;
 }
 
 /* Links */
@@ -159,33 +162,86 @@
 
 @media (max-width: 768px) {
 
+  /* Top section spacing */
+
   .footer-top {
     padding: 40px 0;
   }
+
+  /* Container becomes vertical */
 
   .footer-content-container {
     padding: 0 24px;
     flex-direction: column;
     gap: 40px;
+    align-items: center;
   }
 
   .footer-top .footer-content-container {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
+
+  /* Brand centered */
+
+  .footer-brand {
+    max-width: 420px;
+    text-align: center;
+  }
+
+  /* Ensure logo is centered block */
+  .footer-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* NAVIGATION FIX: 3 Columns side-by-side */
 
   .footer-nav {
     width: 100%;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns side-by-side */
+    gap: 12px;
+    /* Smaller gap for mobile fit */
+    justify-items: center;
   }
 
   .nav-column {
     align-items: center;
     text-align: center;
+    min-width: auto;
   }
+
+  /* Note: We use the desktop spacer (::before) to keep alignment of links 
+     across columns (Sections vs empty headers). 
+     Removing the 'display: none' rule allows the global rule to apply. 
+  */
+
+  /* Bottom bar */
 
   .footer-bottom-inner {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+  }
+
+  /* SOCIAL ICONS */
+
+  .social-links {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .social-box {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-icon {
+    width: 20px;
   }
 }

@@ -25,15 +25,15 @@ const UserModal = ({ user, onClose }) => {
 
                 <div className="info-group">
                     <div className="info-label">Company</div>
-                    <div className="info-value">{user.company.name}</div>
-                    <div className="text-secondary" style={{ fontSize: '14px' }}>"{user.company.catchPhrase}"</div>
+                    <div className="info-value">{user.company?.name || 'N/A'}</div>
+                    <div className="text-secondary" style={{ fontSize: '14px' }}>"{user.company?.catchPhrase || 'N/A'}"</div>
                 </div>
 
                 <div className="info-group">
                     <div className="info-label">Address</div>
                     <div className="info-value">
-                        {user.address.street}, {user.address.suite}<br />
-                        {user.address.city}, {user.address.zipcode}
+                        {user.address?.street}, {user.address?.suite}<br />
+                        {user.address?.city}, {user.address?.zipcode}
                     </div>
                 </div>
 
@@ -60,17 +60,29 @@ const UsersPage = () => {
     const USERS_PER_PAGE = 5;
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then(data => {
-                setUsers(data);
-                setFilteredUsers(data);
+        const loadUsers = async () => {
+            try {
+                // 1. Fetch API Users
+                const apiRes = await fetch('https://jsonplaceholder.typicode.com/users');
+                const apiUsers = await apiRes.json();
+
+                // 2. Fetch Local Users from LocalStorage
+                const localUsersData = localStorage.getItem('localUsers');
+                const localUsers = localUsersData ? JSON.parse(localUsersData) : [];
+
+                // 3. Merge Lists
+                const allUsers = [...localUsers.reverse(), ...apiUsers]; // Show newest local users first
+
+                setUsers(allUsers);
+                setFilteredUsers(allUsers);
                 setLoading(false);
-            })
-            .catch(err => {
+            } catch (err) {
                 console.error("Failed to fetch users", err);
                 setLoading(false);
-            });
+            }
+        };
+
+        loadUsers();
     }, []);
 
     useEffect(() => {
@@ -108,7 +120,7 @@ const UsersPage = () => {
         setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
     };
 
-    if (loading) return <div>Loading users...</div>;
+    if (loading) return <div className="p-8 text-white">Loading users...</div>;
 
     return (
         <div>
@@ -154,12 +166,12 @@ const UsersPage = () => {
                                     </div>
                                 </td>
                                 <td className="user-row-email">{user.email}</td>
-                                <td>{user.company.name}</td>
-                                <td>{user.address.city}</td>
+                                <td>{user.company?.name || 'N/A'}</td>
+                                <td>{user.address?.city || 'N/A'}</td>
                             </tr>
                         )) : (
                             <tr>
-                                <td colSpan="4" style={{ textAlign: 'center', padding: '40px' }}>
+                                <td colSpan="4" style={{ textAlign: 'center', padding: '40px', color: '#9e9e9e' }}>
                                     No users found matching "{searchTerm}"
                                 </td>
                             </tr>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet, NavLink, useNavigate } from 'react-router-dom';
+import { Outlet, NavLink, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import './DashboardLayout.css';
 import '../shared/Shared.css';
@@ -43,7 +43,11 @@ const DashboardLayout = () => {
                         <span>Settings</span>
                     </NavLink>
 
-                    <button className="nav-item logout-btn" onClick={handleLogout}>
+                    <Link to="/" className="nav-item" style={{ marginTop: 'auto' }}>
+                        <span>Back to Home</span>
+                    </Link>
+
+                    <button className="nav-item logout-btn" onClick={handleLogout} style={{ marginTop: '8px' }}>
                         <span>Logout</span>
                     </button>
                 </nav>

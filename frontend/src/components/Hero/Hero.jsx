@@ -121,7 +121,6 @@ const Hero = () => {
             {/* RIGHT BOTTOM */}
             <div className="panel right-bottom">
               <div className="panel-bg" />
-              <img src={rect2} className="p-rb-rect" alt="" />
             </div>
 
 

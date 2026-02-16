@@ -3,6 +3,8 @@
 .hero {
   position: relative;
   padding-top: 160px;
+  overflow-x: clip;
+  /* 🔥 safer than hidden */
 }
 
 .hero .container {
@@ -75,16 +77,27 @@
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+  border-radius: 28px;
+
+  /* 🔥 NEW — CRITICAL */
+  overflow: hidden;
+  /* keeps panels inside */
+  isolation: isolate;
+  /* fixes stacking bugs */
 }
 
 .dashboard-main-bg {
   width: 100%;
-  max-width: 100%;
-  height: auto;
   min-height: 564px;
   border-radius: 28px;
-  display: block;
+  min-width: 0px;
   background-color: rgba(24, 24, 28, 1);
+  overflow: hidden;
+
+  /* 🔥 NEW */
+  position: relative;
+  overflow: hidden;
+  /* prevents child escape */
 }
 
 /* ================= GRID ================= */
@@ -92,10 +105,12 @@
 .dashboard-grid {
   position: absolute;
   inset: 0;
+
   padding: 30px;
 
   display: grid;
 
+  /* 🔥 FIXED TRACKS — CRITICAL */
   grid-template-columns: 240px 240px 240px;
   grid-template-rows: 240px 240px;
 
@@ -105,10 +120,14 @@
   align-content: center;
 }
 
+
 /* ================= PANEL BASE ================= */
 
 .panel {
   position: relative;
+  width: 240px;
+  height: 240px;
+  flex-shrink: 0;
 }
 
 .panel-bg {
@@ -257,14 +276,11 @@
 /* Put background BEHIND everything */
 
 .right-top .panel-bg {
-  width: 240px;
-  height: 331px;
+  width: 100%;
+  top: 0%;
+  height: 140%;
+  position: relative;
 
-  position: absolute;
-  inset: 0;
-
-  z-index: 0;
-  /* 🔥 key fix */
 }
 
 /* All content ABOVE background */
@@ -330,29 +346,10 @@
 }
 
 .right-bottom .panel-bg {
-  width: 240px;
-  height: 103px;
-}
-
-/* Standalone card — exactly like Figma */
-
-.p-rb-rect {
-  position: absolute;
-
-  width: 240px;
-  height: 120px;
-  /* Maintain Figma size or match panel? User said match. */
-  /* If rectangle needs to match panel (240x103), I should change width to 240px? */
-  /* But 230px fits inside 240px neatly. I'll stick to Figma 230px for content. */
-
-  top: 73%;
-  left: 49%;
-  transform: translate(-50%, -50%);
-
-  border-radius: 20px;
-  /* background removed -> handled by panel-bg now so we don't have double opacity? */
-  /* User said "follow panel-bg rule". */
-  /* If I remove background here, and use panel-bg div, it's consistent. */
+  width: 100%;
+  height: 63%;
+  top: 85px;
+  position: relative;
 }
 
 /* ================================================= */
@@ -366,10 +363,17 @@
 }
 
 .subtract {
-  width: 1446px;
+  position: absolute;
+
+  width: min(1446px, 120vw);
+  /* allow shrink */
+  max-width: none;
+
   bottom: -200px;
   left: 50%;
   transform: translateX(-50%);
+
+  pointer-events: none;
   z-index: 0;
 }
 
@@ -448,67 +452,7 @@
     0 0 60px rgba(73, 73, 85, 0.5);
 }
 
-@media (max-width: 960px) {
-  .dashboard-grid {
-    position: relative;
-    inset: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-    height: auto;
-    gap: 30px;
-  }
 
-  .dashboard-main-bg {
-    height: 100%;
-    min-height: auto;
-    /* Let content dictate height */
-    position: absolute;
-    inset: 0;
-  }
-
-  .panel {
-    width: 100%;
-    max-width: 320px;
-    /* Keep reasonable max width */
-  }
-
-  /* Reset Grid positioning */
-  .left,
-  .middle-top,
-  .middle-bottom,
-  .right-top,
-  .right-bottom {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .left .panel-bg {
-    height: 504px;
-    /* Maintain tall aspect */
-  }
-
-  .middle-top .panel-bg,
-  .middle-bottom .panel-bg,
-  .right-bottom .panel-bg {
-    height: 240px;
-  }
-
-  .right-top .panel-bg {
-    height: 331px;
-  }
-
-  /* Adjust Right Bottom Rectangle */
-  .p-rb-rect {
-    top: 50%;
-    /* Center in the new stacked context */
-  }
-
-  .hero-title {
-    padding: 0 20px;
-  }
-}
 
 @media (max-width: 768px) {
   .hero-title {

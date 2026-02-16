@@ -12,7 +12,8 @@
   padding: 0 130px;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   gap: 24px;
 }
 
@@ -125,7 +126,7 @@
 .info-text {
   width: 100%;
   max-width: 443px;
-  margin-top: 161px;
+  margin-top: 0;
   /* Aligns text block with orbit per Figma */
 }
 
@@ -217,6 +218,8 @@
   .info-subtitle {
     width: 100%;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .info-visual {

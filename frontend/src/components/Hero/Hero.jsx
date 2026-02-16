@@ -37,7 +37,10 @@ import group110 from "../../assets/Group 110.png";
 import group111 from "../../assets/Group 111.png";
 import rect2 from "../../assets/Rectangle 46.png";
 
+import { useNavigate } from "react-router-dom";
+
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="hero">
 
@@ -67,6 +70,7 @@ const Hero = () => {
             backgroundRepeat: 'no-repeat',
             backgroundColor: 'transparent'
           }}
+          onClick={() => navigate("/login")}
         >
         </button>
 

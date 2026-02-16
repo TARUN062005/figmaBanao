@@ -1,16 +1,72 @@
-# React + Vite
+# Figma Pixel Implementation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a pixel-perfect implementation of a SaaS landing page based on a Figma design. It has been extended with a full authentication flow and a functional dashboard.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Part A: Landing Page (Pixel Perfect)
+- **Framework Agnostic Styles**: Pure CSS implementing the exact Figma specifications.
+- **Responsive Design**: Mobile-optimized layouts for all sections.
+- **Interactive Elements**: Hover states and smooth transitions.
 
-## React Compiler
+### Part B: Authentication
+- **Login & Signup Pages**: Designed to match the landing page aesthetic.
+- **Authentication State**: Managed via Context API and persisted in `localStorage`.
+- **Protected Routes**: Secure wrapper for dashboard access.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Note:** Since the provided Figma design contains no authentication controls, all primary CTAs (e.g., “Download Template”, Contact Form) redirect users to the login page to simulate a real SaaS funnel.
 
-## Expanding the ESLint configuration
+### Part C: Dashboard
+- **Overview**: Stats summary with simulated data.
+- **User Management**:
+  - Fetches real data from [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
+  - Client-side pagination, sorting (A-Z/Z-A), and search.
+  - Detailed user view in a modal.
+- **Settings**:
+  - Profile management (simulated).
+  - **Dark/Light Mode**: Toggles theme globally and persists preference.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **React**: Component-based UI.
+- **Vite**: Fast build tool and dev server.
+- **CSS**: Custom styles (No Tailwind/Bootstrap used).
+- **React Router**: Client-side routing.
+- **Context API**: State management for Auth and Theme.
+
+## 📦 Installation
+
+1.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+2.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
+
+3.  **Build for Production**
+    ```bash
+    npm run build
+    ```
+
+## 🧭 Project Structure
+
+```text
+src/
+├── components/
+│   ├── auth/              # Login & Signup components
+│   ├── dashboard/         # Dashboard layout & pages
+│   ├── shared/            # Reusable UI primitives (Button, Input)
+│   ├── LandingPage.jsx    # Landing page wrapper
+│   └── [Existing]         # Original Figma components (Hero, Header, etc.)
+├── context/
+│   ├── AuthContext.jsx    # Auth logic provider
+│   └── ThemeContext.jsx   # Theme provider
+└── App.jsx                # Routing configuration
+```
+
+## ✅ Design Decisions
+- **Routing**: `react-router-dom` handles navigation without page reloads.
+- **Styling**: `Shared.css` ensures new components (Auth/Dashboard) inherit the landing page's typography and color variables.
+- **Icons**: Used existing assets where possible or CSS shapes to avoid external dependencies.

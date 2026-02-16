@@ -10,7 +10,10 @@ import ellipse9 from "../../assets/Ellipse 9.png";
 import ellipse10 from "../../assets/Ellipse 10.png";
 import ellipse11 from "../../assets/Ellipse 11.png";
 
+import { useNavigate } from "react-router-dom";
+
 const InfoSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="info-section">
       <div className="info-container">
@@ -42,7 +45,10 @@ const InfoSection = () => {
           </p>
 
 
-          <button className="info-btn">
+          <button
+            className="info-btn"
+            onClick={() => navigate("/login")}
+          >
             <img src={frame9} alt="Download" />
           </button>
         </div>

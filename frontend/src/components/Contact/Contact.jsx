@@ -10,7 +10,10 @@ import fr6 from "../../assets/Frame 6.png"; // Message input
 import fr5 from "../../assets/Frame 5.png"; // Name input
 import fr4 from "../../assets/Frame 4.png"; // Email input
 
+import { useNavigate } from "react-router-dom";
+
 const Contact = () => {
+  const navigate = useNavigate();
   return (
     <section className="contact-wrapper">
       {/* --- Banner Section --- */}
@@ -21,7 +24,10 @@ const Contact = () => {
           <div className="banner-content">
             <p className="banner-pre">Love our Our Tool?</p>
             <h2 className="banner-title">Fell Free to Join our <br /> 15 Days Free Trial</h2>
-            <button className="banner-btn">
+            <button
+              className="banner-btn"
+              onClick={() => navigate("/login")}
+            >
               <img src={fr3} alt="Download Template" />
             </button>
           </div>
@@ -45,7 +51,13 @@ const Contact = () => {
             functional. It should be able to solve the problem
           </p>
 
-          <form className="contact-inputs" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="contact-inputs"
+            onSubmit={(e) => {
+              e.preventDefault();
+              navigate("/login");
+            }}
+          >
             <div className="input-box email-input">
               <img src={fr4} alt="Email" />
               <input type="email" placeholder="Your Email" className="hidden-input" />

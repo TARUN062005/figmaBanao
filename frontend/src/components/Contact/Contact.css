@@ -16,7 +16,7 @@
 .banner-container {
     position: absolute;
     /* 🔥 FLOAT */
-    top: -470px;
+    top: -418px;
     /* Adjusted for new wrapper margin (-700 + 250) */
     left: 50%;
     transform: translateX(-50%);
@@ -274,7 +274,8 @@
     /* 🔹 Stop wrapper pull-up */
 
     .contact-wrapper {
-        margin-top: 0;
+        margin-top: -165px;
+        /* Pull closer to LogoCloud on mobile */
         padding: 80px 0 60px 0;
     }
 
@@ -286,8 +287,8 @@
         top: 0;
         left: auto;
         transform: none;
-        margin: 0 auto 60px;
-        /* space below LogoCloud */
+        margin: 0 auto 28px;
+        /* space below LogoCloud - Reduced gap */
         max-width: 520px;
         /* square feel */
     }

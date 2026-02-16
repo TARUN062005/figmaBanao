@@ -8,29 +8,22 @@ export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState('dark');
 
     useEffect(() => {
+        // Load persist theme
         const savedTheme = localStorage.getItem('theme') || 'dark';
         setTheme(savedTheme);
-        document.documentElement.setAttribute('data-theme', savedTheme);
 
-        // Simple class toggle for body if needed by existing generic styles
-        if (savedTheme === 'light') {
-            document.body.classList.add('light-mode');
-        } else {
-            document.body.classList.remove('light-mode');
-        }
+        // Remove direct DOM manipulation to maintain scoping requirements
+        // document.documentElement.setAttribute('data-theme', savedTheme);
+        // document.body.classList.remove('light-mode');
     }, []);
 
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
         localStorage.setItem('theme', newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
 
-        if (newTheme === 'light') {
-            document.body.classList.add('light-mode');
-        } else {
-            document.body.classList.remove('light-mode');
-        }
+        // No DOM manipulation here either
+        // document.documentElement.setAttribute('data-theme', newTheme);
     };
 
     return (

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Outlet, NavLink, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useTheme } from '../../context/ThemeContext'; // Import Theme Context
 import './DashboardLayout.css';
 import '../shared/Shared.css';
 
 const DashboardLayout = () => {
-    const { logout, user } = useAuth();
+    const { logout } = useAuth();
+    const { theme } = useTheme(); // Get current theme state
     const navigate = useNavigate();
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -19,11 +21,12 @@ const DashboardLayout = () => {
     };
 
     return (
-        <div className="dashboard-layout">
+        // Apply theme class ONLY to this wrapper
+        <div className={`dashboard-layout ${theme}`}>
             {/* Mobile Header */}
             <div className="mobile-header">
                 <div className="sidebar-logo" style={{ marginBottom: 0 }}>SaaS App</div>
-                <button className="btn-outline-ui" onClick={toggleSidebar}>
+                <button className="btn-outline-ui" onClick={toggleSidebar} style={{ color: 'var(--text-primary)', borderColor: 'var(--border-color)' }}>
                     Menu
                 </button>
             </div>

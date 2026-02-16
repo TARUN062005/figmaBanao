@@ -33,7 +33,7 @@
 .btn-outline-ui {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--text-primary);
+    color: var(--text-primary, #ffffff);
 }
 
 .btn-outline-ui:hover {

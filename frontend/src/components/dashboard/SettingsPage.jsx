@@ -68,7 +68,7 @@ const SettingsPage = () => {
                     <h2 className="text-secondary" style={{ fontSize: '18px', marginBottom: '24px' }}>Appearance</h2>
                     <div className="setting-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                            <div style={{ fontWeight: '500', color: 'white' }}>Theme Mode</div>
+                            <div style={{ fontWeight: '500', color: 'var(--text-primary)' }}>Theme Mode</div>
                             <div className="text-secondary" style={{ fontSize: '14px' }}>Switch between dark and light themes</div>
                         </div>
                         <Button variant="outline" onClick={toggleTheme}>
@@ -82,7 +82,7 @@ const SettingsPage = () => {
                     <h2 className="text-secondary" style={{ fontSize: '18px', marginBottom: '24px' }}>Notifications</h2>
                     <div className="setting-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                            <div style={{ fontWeight: '500', color: 'white' }}>Email Notifications</div>
+                            <div style={{ fontWeight: '500', color: 'var(--text-primary)' }}>Email Notifications</div>
                             <div className="text-secondary" style={{ fontSize: '14px' }}>Receive updates about your account activity</div>
                         </div>
                         <label className="switch" style={{ position: 'relative', display: 'inline-block', width: '50px', height: '28px' }}>

@@ -56,7 +56,7 @@ const DashboardSummary = () => {
             <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '32px' }}>
                 <div className="card-ui">
                     <h3 className="text-secondary" style={{ fontSize: '14px', marginBottom: '8px' }}>Total Registered Users</h3>
-                    <div style={{ fontSize: '36px', fontWeight: '700', color: 'white' }}>{stats.totalUsers}</div>
+                    <div style={{ fontSize: '36px', fontWeight: '700', color: 'var(--text-primary)' }}>{stats.totalUsers}</div>
                     <div style={{ color: '#4caf50', fontSize: '12px', marginTop: '4px' }}>
                         {stats.apiUsersCount} from API + {stats.localUsersCount} Local
                     </div>
@@ -64,7 +64,7 @@ const DashboardSummary = () => {
 
                 <div className="card-ui">
                     <h3 className="text-secondary" style={{ fontSize: '14px', marginBottom: '8px' }}>Active Companies</h3>
-                    <div style={{ fontSize: '36px', fontWeight: '700', color: 'white' }}>{stats.activeCompanies}</div>
+                    <div style={{ fontSize: '36px', fontWeight: '700', color: 'var(--text-primary)' }}>{stats.activeCompanies}</div>
                     <div style={{ color: '#ff9800', fontSize: '12px', marginTop: '4px' }}>Global reach</div>
                 </div>
 

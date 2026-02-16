@@ -51,6 +51,22 @@ const Hero = () => {
       <div className="bg e3" />
       <div className="bg e14" />
 
+      {/* Vertical Lines Background */}
+      <div className="hero-lines-bg">
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+      </div>
+
       <div className="container">
 
         <h1 className="hero-title">

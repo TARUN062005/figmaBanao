@@ -16,6 +16,49 @@
   text-align: center;
 }
 
+/* ================= LINES DECORATION ================= */
+
+.hero-lines-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px;
+  /* Matches header container */
+  height: 100%;
+  padding: 0 70px;
+  /* Align with ellipse14 (122px) */
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 0;
+  /* Behind content, alongside bg */
+}
+
+.hero-lines-bg .line {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.08);
+  /* Slightly more visible */
+}
+
+@media (max-width: 1280px) {
+  .hero-lines-bg {
+    padding: 0 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-lines-bg {
+    padding: 0 24px;
+    display: none;
+    /* Often hidden on mobile, or keep if requested */
+  }
+}
+
 /* ================= TEXT ================= */
 
 .hero-title {

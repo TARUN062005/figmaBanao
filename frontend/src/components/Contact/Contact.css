@@ -104,8 +104,9 @@
 }
 
 .wireframe-sphere {
-    width: 542px;
-    height: 542px;
+    width: 100%;
+    max-width: 542px;
+    height: auto;
     opacity: 1;
     z-index: 1;
 }

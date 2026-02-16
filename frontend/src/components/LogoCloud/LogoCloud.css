@@ -22,7 +22,8 @@
   /* Exact line height */
   text-align: center;
   /* Layout Dimensions */
-  width: 567px;
+  width: 100%;
+  max-width: 567px;
   /* height: 128px; Let content define height or min-height */
   margin: 0 auto 70px;
   /* Center horizontally, 70px bottom margin to grid */

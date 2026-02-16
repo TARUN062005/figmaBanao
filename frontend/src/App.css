@@ -35,6 +35,7 @@ a:hover {
 img {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 /* Global Layout Utility */
@@ -55,4 +56,11 @@ img {
     :root {
         --content-padding: 0 24px;
     }
+}
+
+/* Safety Resets */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
 }

@@ -21,8 +21,9 @@
 /* Title */
 
 .feature-main-title {
-  width: 342px;
-  height: 80px;
+  width: 100%;
+  max-width: 342px;
+  height: auto;
 
   font-family: "Poppins", sans-serif;
   font-size: 48px;
@@ -37,7 +38,8 @@
 /* Description */
 
 .feature-main-desc {
-  width: 577px;
+  width: 100%;
+  max-width: 577px;
 
   font-family: "Poppins", sans-serif;
   font-size: 18px;
